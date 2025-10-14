@@ -1,5 +1,5 @@
 {
-   "version":1.0.1,
+   "version":"1.0.1",
    "description":"Initial release",
    "released":"14 Oct 2025"
 }
