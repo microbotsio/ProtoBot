@@ -9,7 +9,7 @@
   - Sends live sensor readings to the MicroLink App (ensure "Logs" are enabled)
 */
 
-#include <protobot.h>
+#include <ProtoBot.h>
 #include "Adafruit_SHTC3.h"
 
 Adafruit_SHTC3 shtc3 = Adafruit_SHTC3();
