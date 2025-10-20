@@ -9,7 +9,7 @@
   - Read the Run() function to time your custom logic code (1–10 Hz)
 */
 
-#include <ProtoBot.h>
+#include <protobot.h>
 
 ProtoBot myProtoBot;
 
