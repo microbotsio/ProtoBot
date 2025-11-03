@@ -1,5 +1,5 @@
 {
-   "version":"1.0.1",
-   "description":"Fixed bugs affecting compass steering after rotation and delays when external sensors are connected.",
-   "released":"31 Oct 2025"
+   "version":"1.0.2",
+   "description":"Fixed bug related to ProtoBot_Eyelight.h ",
+   "released":"03 Nov 2025"
 }
