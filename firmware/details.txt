@@ -1,5 +1,5 @@
 {
-   "version":"1.0.3",
-   "description":"Optimized proximity sensing algorithm of the frontal proximity sensor, and fixed Automate-mode bug when using an external sensor. ",
+   "version":"1.0.4",
+   "description":"Updated the initial onboard-LED and motor testing routine for a more reliable startup check.",
    "released":"26 Nov 2025"
 }
