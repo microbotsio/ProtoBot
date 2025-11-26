@@ -6,7 +6,7 @@
 
 #define MOTION_MODE 1
 
-#define SW_VERSION "1.0.3"
+#define SW_VERSION "1.0.4"
 #define HW_VERSION "CodeCell C6 Drive"
 #define MANUFACTURER "Microbots"
 
@@ -126,5 +126,6 @@ public:
   void Hibernate(void);
   void PrintLog(char *mesage);
 };
+
 
 #endif
