@@ -1,5 +1,5 @@
 {
-   "version":"1.0.2",
-   "description":"Fixed bug related to ProtoBot_Eyelight.h ",
-   "released":"03 Nov 2025"
+   "version":"1.0.3",
+   "description":"Optimized proximity sensing algorithm of the frontal proximity sensor, and fixed Automate-mode bug when using an external sensor. ",
+   "released":"26 Nov 2025"
 }
