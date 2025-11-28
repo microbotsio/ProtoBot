@@ -1541,9 +1541,7 @@ bool ProtoBot::FrontAvoidDetect() {
       FrontAvoidRead();  //Update Proximity_last
     }
     FrontAvoidRead();
-    Serial.print(_eyelight_proximity);
-    Serial.print(" ");
-    Serial.println(_eyelight_value);
+    
     if ((_eyelight_dir) && (_eyelight_value >= 3U) && (_eyelight_proximity > 70U)) {
       sleepTimer = 0;
       myEyeLight.show_Static(500, 0XFFFFFF);
@@ -1607,3 +1605,4 @@ void ProtoBot::FrontPID() {
     _Front_Flag = 0;
   }
 }
+
