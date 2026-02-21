@@ -1,0 +1,1 @@
+Note: Add a 2.5 mm (0.098 in) diameter rod to the 3D prints, with a maximum length of 40 cm (15.7 in)
