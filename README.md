@@ -2,203 +2,162 @@
 
 <img src="https://microbots.io/cdn/shop/files/protobotpalmsize_7cef90ce-c1ab-44e0-adb8-4fcbe82cad47_800x.png?v=1767707072" alt="ProtoBot" width="300" align="right" style="margin-left: 20px;">
 
-## Build Your Own Smart Palm-Sized Robot
+## Overview
 
-**ProtoBot** is a smart, palm-sized robot designed for anyone excited about building robots.
+ProtoBot is a smart, palm-sized educational robot designed to teach practical robotics through hands-on building and programming.
 
-Follow the step-by-step build guide, assemble your robot, then:
+It combines mechanical assembly, embedded electronics, sensors, and software into a compact system that learners can fully understand, modify, and extend.
 
-- Drive it with the MicroLink app  
-- Automate it with block coding  
-- Customize it with 3D-printed parts  
-- Expand it with external sensors  
-- Or dive deeper using the Arduino library  
+This repository contains the **ProtoBot Arduino library**, example sketches, and hardware files that support further experimentation, customization, and development.
 
-ProtoBot is offered in **two maker levels**, making it accessible to everyone — from curious students to experienced makers.
+More information: http://microbots.io/protobot
 
 ---
 
-## Choose Your Maker Level
+## Learning Focus
 
-### Beginner (No Soldering Required)
+ProtoBot supports learning across multiple areas of robotics:
 
-- Comes pre-soldered  
-- Simply screw the parts together  
-- No tools required  
-- Start driving instantly  
+- Mechanical assembly and 3D printing  
+- Basic electronics and soldering  
+- Motor control and movement logic  
+- Sensor integration  
+- Block-based automation  
+- Programming via the Arduino library  
+- Data logging and expansion with I²C devices  
 
-Perfect for students, classrooms, and first-time builders.
+To support different experience levels, ProtoBot is available in three configurations:
 
----
+- **Beginner (Pre-Soldered)**  
+  Electronics are pre-assembled. You complete mechanical assembly and begin programming immediately.
 
-### Pro (Full Build Experience)
+- **Pro**  
+  Requires soldering the motors and electronics before full assembly.
 
-- Solder the motors and electronics yourself  
-- Assemble the robot from scratch  
-- Optionally 3D-print your own custom shell  
+- **Pro – 3D Print-It-Yourself**  
+  Same as the Pro version, but you print your own robot shell using the provided open-source 3D files.
 
-Requires:
-- Soldering iron  
-- (Optional) 3D printer for custom shell  
-
-Perfect for makers who want the complete hands-on experience.
-
----
-
-## What You’ll Build & Explore
-
-With ProtoBot, you will:
-
-- Assemble a fully working robot with motors, wheels, sensors, and lights  
-- Learn how compact robotics systems are built  
-- Experiment with motion sensing, light sensing, and proximity detection  
-
-Using the free **MicroLink App** (Android & iOS), you can:
-
-### Drive & Rewind
-Control ProtoBot with a joystick or retrace its path.
-
-### Shape & Automate
-Use beginner-friendly block coding to:
-- Draw shapes  
-- Run custom actions  
-- Create repeatable behaviors  
-
-### Dodge & Avoid
-Use built-in sensors to react to obstacles.
-
-### Sense & Balance
-Watch how ProtoBot uses motion sensing to:
-- Steer  
-- Align  
-- Drive patterns  
-- Maintain heading  
-
-### Record & Expand
-Attach external I²C sensors (temperature, humidity, etc.) and log real-time data.
-
-### Learn & Hack
-Go further with the Arduino library to:
-- Create custom behaviours  
-- Read sensors directly  
-- Control LEDs  
-- Program your own missions  
+All versions share the same hardware architecture and software ecosystem, allowing development from basic assembly to full hardware customization.
 
 ---
 
-## What’s Inside Every ProtoBot Kit
+## Hardware Overview
 
-- **CodeCell C6 Drive** with FlexPCB sticker-base  
-  (clean wiring, RGB eye-lights, proximity sensing & motor connections)
+Each ProtoBot includes:
+
+- **CodeCell C6 Drive module**, integrating:
+  - ESP32-C6  
+  - USB-C battery charging  
+  - Light & proximity sensing  
+  - 9-axis IMU motion sensor  
+  - Motor drivers  
+
 - 4 × N20 motors  
 - Aluminium wheels with silicone tyres  
+- FlexPCB front base (RGB eye LEDs, proximity sensing & motor connections)  
 - Breadboard mount for expansion  
-- All required screws  
-- Free screwdriver  
+- Assembly hardware  
 
-Everything needed to bring your robot to life.
-
----
-
-## Made for Makers
-
-ProtoBot’s body and accessories are **fully open-source**.
-
-You can:
-
-- 3D-print the shell at home in your favorite colors  
-- Modify the design files  
-- Create new attachments  
-- Design your own add-ons  
-
-The included breadboard allows you to attach:
-
-- Extra I²C sensors  
-- Displays  
-- Power modules  
-- Custom circuits  
-
-ProtoBot becomes a tiny, powerful playground for experimentation.
+Once assembled, ProtoBot provides a complete robotics platform in a compact form factor.
 
 ---
 
-# ProtoBot Arduino Library
+# Repository Structure
 
-This repository contains the **ProtoBot Arduino library**, used for direct programming and advanced control.
+This repository includes:
 
-It allows you to:
+- ProtoBot Arduino Library  
+- Ready-to-run Arduino examples  
+- Hardware files and user guide  
+- 3D-printable mechanical parts and accessories  
 
-- Control motors
-- Generate shapes
-- Read sensors
-- Control RGB LEDs
-- Build autonomous behaviours
+Mechanical components are open-source and intended for modification and experimentation.
 
 ---
 
-## Repository Structure
+# Installation (USB Programming via Arduino IDE)
+
+ProtoBot can be programmed and updated via the Arduino IDE using its open-source library.
+
+---
+
+## 1. Install ESP32 Board Support
+
+If this is your first time using Arduino with ESP32:
+
+1. Open **Arduino IDE**  
+2. Go to **File → Preferences**  
+3. In **Additional Board Manager URLs**, add:
 
 ```
-ProtoBot/
-│
-├── examples/              # Arduino example sketches
-├── circuits/              # Circuit reference diagrams
-├── mounts/                # Mechanical mounts
-├── 3d_prints/             # Chassis and accessory STL files
-├── accessories/           # Optional printable add-ons
-└── src/                   # ProtoBot library source
+https://dl.espressif.com/dl/package_esp32_index.json
 ```
 
-You can use the included files to:
-
-- 3D print your own ProtoBot  
-- Modify mounts  
-- Print accessories  
-- Extend hardware with custom expansions  
+4. Click **OK**
+5. Go to **Tools → Board → Board Manager**
+6. Search for **ESP32**
+7. Install or update to the latest version
 
 ---
 
-## Installation
+## 2. Install ProtoBot Library
 
-1. Install the ProtoBot library  
-2. Install required dependencies:
-   - CodeCell library  
-   - BLEOTA  
-   - Adafruit_NeoPixel  
-3. Select **ESP32-C6** board in Arduino IDE  
-4. Upload an example from `/examples/`
+1. Go to **Sketch → Include Library → Manage Libraries**
+2. Search for **ProtoBot**
+3. Install the latest version  
+   (If already installed, ensure it is up to date)
 
 ---
 
-## Basic Usage Example
+## 3. Install Required Dependencies
 
-```cpp
-#include <ProtoBot.h>
+Ensure the following libraries are installed:
 
-ProtoBot myProtoBot;
+- CodeCell  
+- DriveCell  
+- BLEOTA  
+- Adafruit_NeoPixel  
 
-void setup() {
-  Serial.begin(115200);
-  myProtoBot.Init();
-}
+Install them via **Library Manager** if needed.
 
-void loop() {
-  if (myProtoBot.Run(3)) {
-    myProtoBot.Drive(100, 90);  // Drive forward
-  }
-}
+---
+
+## 4. Select the Correct Board
+
+ProtoBot uses the CodeCell C6 Drive module.
+
+Go to **Tools → Board** and select:
+
+```
+ESP32C6 Dev Module
 ```
 
-`Run(loop_timer)` controls how often your logic executes.
+Set the following Tools Settings:
 
-- Lower frequency → longer movements → larger shapes  
-- Higher frequency → shorter movements → smaller shapes  
+- **USB CDC On Boot** → Enabled  
+- **CPU Clock Speed** → 160 MHz  
+- **Flash Size** → 8MB  
+- **Partition Scheme** → 8M with spiffs (3MB APP / 1.5MB SPIFFS) 
+
+Go to **Tools → Port** and select the correct COM port of your ProtoBot robot.
 
 ---
 
-## Manual Control API
+## 5. Upload an Example
 
-### Core System
+1. Open **File → Examples → ProtoBot**
+2. Choose an example sketch
+3. Click **Upload**
+
+You are now ready to program and customize ProtoBot.
+
+---
+
+# Manual Control API
+
+The ProtoBot library exposes direct control functions for motors, sensors, and LEDs.
+
+## Core System
 
 ```cpp
 void Init();
@@ -206,9 +165,13 @@ bool Run(uint8_t loop_timer);
 void PrintLog(char *message);
 ```
 
+- `Init()` initializes motors, sensors, and internal systems
+- `Run()` provides a timed execution structure
+- `PrintLog()` outputs sensor logging or debug information via the MicroLink App
+
 ---
 
-### Motion Control
+## Motion Control
 
 ```cpp
 void Drive(uint8_t speed, float angle);
@@ -217,9 +180,17 @@ void Stop();
 void SetSpeed(uint8_t level);
 ```
 
+- `Drive(speed, angle)`  
+  - Speed: 0–100  
+  - Angle: 0–360°  
+
+- `Rotate(angle)` rotates in place.
+- `Stop()` halts all motors.
+- `SetSpeed(level)` adjusts the motor speed preset.
+
 ---
 
-### Predefined Shape Movement
+## Path Shape Movement
 
 ```cpp
 void DriveSquare(uint8_t speed_level, uint8_t shape_size, bool loop);
@@ -228,77 +199,145 @@ void DriveTriangle(uint8_t speed_level, uint8_t shape_size, bool loop);
 void DriveInfinity(uint8_t speed_level, uint8_t shape_size, bool loop);
 ```
 
+These functions demonstrate how forward motion combined with controlled rotation produces geometric paths.
+
+Parameters:
+
+- `speed_level` – preset motor speed (e.g. `SPEED_FAST`, `SPEED_INTERMEDIATE`, `SPEED_SLOW`)  
+- `shape_size` – range 1–100 to adjust the scale  
+- `loop` – repetition control (`SHAPE_ONCE` or `SHAPE_LOOP`)  
+
+These functions are useful for understanding sequencing and motion control logic.
+
 ---
 
-### LED Control
+## LED Control
 
 ```cpp
 void EyeColor(uint8_t red, uint8_t green, uint8_t blue);
 ```
 
+Controls the color of the six front RGB LEDs.
+
 ---
 
-### Orientation
+## Orientation Control
 
 ```cpp
 void AlignNorth(bool status);
 ```
 
+Uses the IMU to maintain heading alignment when enabled.
+
 ---
 
-### Sensor Access
+## Sensor Access
 
 ```cpp
-bool ReadTouch();
+bool ReadTap();
 uint8_t ReadBattery();
 uint16_t ReadProximityFront();
 uint16_t ReadProximityBase();
 uint16_t ReadLightFront();
-uint16_t ReadLightBase();
 float ReadHeading();
 void ReadMotion(float &roll, float &pitch, float &yaw);
 ```
+
+Provides access to:
+
+- Tap detection  
+- Battery level  
+- Proximity (front & base)  
+- Ambient light  
+- Heading  
+- Roll, pitch, yaw  
+
+These functions can be combined to implement obstacle avoidance, reactive lighting, or orientation-based behaviour.
+
+---
+
+# Example Sketches
+
+The `/examples` folder includes demonstrations of:
+
+- Square, triangle, and custom path shapes  
+- Manual drive control via joystick  
+- Sensor-based reactions  
+- External I²C sensor and display integration  
+- Arduino OTA usage  
+
+Examples are structured to be readable and educational for beginners.
+
+---
+
+# 3D Prints & Hardware
+
+The `/hardware` folder provides:
+
+- Printable chassis parts  
+- Mechanical mounts  
+- Expansion accessories  
+- Circuit reference diagrams  
+
+You are encouraged to modify and extend the robot's mechanical design.
 
 ---
 
 # Dependencies
 
-ProtoBot depends on:
+ProtoBot depends on the following libraries:
 
-- CodeCell library  
-- BLEOTA library  
+- CodeCell  
+- DriveCell  
+- BLEOTA  
 - Adafruit_NeoPixel  
 
-Ensure all dependencies are installed before compiling.
+Ensure all required libraries are installed and updated before compiling examples.
 
 ---
 
-# Attribution & Licensing
+# Attribution & Third-Party Components
 
 ## ProtoBot Library
 
-The **ProtoBot library was entirely coded by microbots**.
+The **ProtoBot library was entirely developed by microbots** and builds upon the CodeCell library as its core.
 
----
+The CodeCell library provides:
 
-## CodeCell Library Attribution
+- Peripheral initialization  
+- Power & charge management  
+- Light sensing  
+- Motion sensing  
+- Motor drivers  
 
-This `CodeCell` library contains various features, including device initialization, power management, light sensing, and motion sensing.
+Some of the BNO085 9-axis sensor-fusion motion-sensing functionality was adapted from:
 
-The VCNL4040 light sensor code does not rely on any external libraries.
+- **SparkFun BNO08x Arduino Library** (MIT License)  
+- **CEVA SH2 Sensor Hub Library** (Apache License 2.0)  
 
-Some of the BNO085 motion-sensor functions were adapted from the SparkFun BNO08x Arduino Library and the official library provided by CEVA for the SH2 sensor hub.
+The SparkFun BNO08x library was originally written by Nathan Seidle and adjusted by Pete Lewis at SparkFun Electronics. It was modified for integration into the CodeCell library.
 
-The SparkFun BNO08x library, originally written by Nathan Seidle and adjusted by Pete Lewis at SparkFun Electronics, is released under the MIT License. Significant modifications were made to adapt it and integrate into the `CodeCell` library.
+The CEVA SH2 sensor hub library is licensed under the Apache License 2.0.
 
-Additionally, this project incorporates the official CEVA SH2 sensor hub library files, licensed under the Apache License 2.0.
-
-CEVA’s notice:
+CEVA notice:
 
 > This software is licensed from CEVA, Inc.  
 > Copyright (c) CEVA, Inc. and its licensors. All rights reserved.  
 > CEVA and the CEVA logo are trademarks of CEVA, Inc.
 
+Full license texts are provided in the repository’s LICENSE and NOTICE files.
+
 ---
 
-ProtoBot is made to support your learning journey — from building and assembling your robot to soldering, coding, and experimenting with real sensors and hardware.
+## Additional Libraries
+
+ProtoBot also uses:
+
+- **BLEOTA** – bootloader OTA functionality  
+- **Adafruit_NeoPixel** – control of the six front RGB LEDs  
+
+Please refer to their respective repositories for license details.
+
+---
+
+ProtoBot is intended as an educational robotics platform supporting learning through building, programming, and experimentation.
