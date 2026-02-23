@@ -122,7 +122,7 @@ Install them via **Library Manager** if needed.
 
 ---
 
-## 4. Select the Correct Board
+## 4. Select the Board
 
 ProtoBot uses the CodeCell C6 Drive module.
 
