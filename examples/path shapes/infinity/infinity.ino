@@ -30,6 +30,6 @@ void setup() {
 
 void loop() {
   if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
-    myProtoBot.DriveInfinity(SPEED_INTERMEDIATE, 100, SHAPE_LOOP);  // Drive in a square shape with 100% speed
+    myProtoBot.DriveInfinity(SPEED_INTERMEDIATE, 100, SHAPE_LOOP);  // Drive in a square shape with 100% shape size
   }
 }
