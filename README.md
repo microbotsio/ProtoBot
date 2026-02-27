@@ -236,6 +236,7 @@ Uses the IMU to maintain heading alignment when enabled.
 ```cpp
 bool ReadTap();
 uint8_t ReadBattery();
+uint8_t ReadSpeed();
 uint16_t ReadProximityFront();
 uint16_t ReadProximityBase();
 uint16_t ReadLightFront();
@@ -245,8 +246,9 @@ void ReadMotion(float &roll, float &pitch, float &yaw);
 
 Provides access to:
 
-- Tap detection  
+- Tap detection
 - Battery level  
+- Joystick speed in %  
 - Proximity (front & base)  
 - Ambient light  
 - Heading  
