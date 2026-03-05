@@ -2,6 +2,8 @@
   Example: ProtoBot Reactive Eyes on 1.5" 128x128 OLED SSD1327 Display
   Boards: ProtoBot with CodeCell C6 Drive
 
+  3D-printed OLED mount files can be downloaded here: https://github.com/microbotsio/ProtoBot/tree/main/hardware/mounts/OLED_Holder
+
   Behavior:
   - Pupils look left/right based on heading (ReadHeading)
   - Eyes open wider with speed (ReadSpeed)
