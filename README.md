@@ -240,6 +240,7 @@ uint8_t ReadSpeed();
 uint16_t ReadProximityFront();
 uint16_t ReadProximityBase();
 uint16_t ReadLightFront();
+uint16_t ReadLightBase();
 float ReadHeading();
 void ReadMotion(float &roll, float &pitch, float &yaw);
 ```
