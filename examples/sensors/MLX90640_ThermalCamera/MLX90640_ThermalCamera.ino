@@ -6,6 +6,8 @@
     - MLX90640 Thermal Camera
     - 128x128 SSD1327 OLED Display
 
+  3D-printed OLED mount files can be downloaded here: https://github.com/microbotsio/ProtoBot/tree/main/hardware/mounts/OLED_Holder
+
   Behavior:
     - Reads a thermal image frame from the MLX90640
     - Displays the frame on the OLED
