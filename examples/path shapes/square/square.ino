@@ -38,7 +38,7 @@ void setup() {
 void loop() {
   if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
 
-    myProtoBot.DriveSquare(SPEED_SLOW, 60, SHAPE_LOOP);  // Drive in a square shape with 60% speed
+    myProtoBot.DriveSquare(SPEED_SLOW, 60, SHAPE_LOOP);  // Drive in a square shape with 60% size
 
     // Uncomment below to control the robot step-by-step
     // step++;
