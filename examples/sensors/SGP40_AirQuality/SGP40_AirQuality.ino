@@ -7,6 +7,9 @@
   - Connect the SGP40 sensor to the ProtoBot expansion header (SDA, SCL, GND, 3V3)
   - Reads raw VOC index values using Adafruit SGP40 library
   - Sends live VOC readings to the MicroLink App (ensure "Logs" are enabled)
+  - The robot’s eye color changes dynamically based on VOC levels
+  - When air quality drops, the robot becomes alert and begins moving in a circular shape
+
 
   Air Quality Interpretation (RAW SGP40 ticks):
   -------------------------------------------------------
@@ -45,14 +48,18 @@ void loop() {
 
     if (voc_raw < 10000) {
       quality = "Good";
+      myProtoBot.EyeColor(0, 0xFF, 0); //Light Eye Green
     } else if (voc_raw < 20000) {
       quality = "Moderate";
+      myProtoBot.EyeColor(0xFF, 0xFF, 0); //Light Eye Yellow
     } else {
       quality = "Poor";
+      myProtoBot.EyeColor(0xFF, 0, 0); //Light Eye Red
+      myProtoBot.DriveCircle(SPEED_FAST,1, SHAPE_LOOP);  // Drive in a small circle shape 
     }
 
     // Send labelled output to MicroLink log
-    sprintf(myMessage, "VOC: %u (%s)", voc_raw, quality);
+    sprintf(myMessage, "VOC: %u %s", voc_raw, quality);
     myProtoBot.PrintLog(myMessage);
 
     Serial.println(myMessage); // Optional: also print to Serial Monitor
