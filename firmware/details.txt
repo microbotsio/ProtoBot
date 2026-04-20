@@ -1,5 +1,5 @@
 {
-   "version":"1.0.4",
-   "description":"Updated the initial onboard-LED and motor testing routine for a more reliable startup check.",
-   "released":"26 Nov 2025"
+   "version":"1.0.5",
+   "description":"Improved front proximity sensing, balancing, and refined tap detection.",
+   "released":"20 Apr 2026"
 }
