@@ -1,5 +1,5 @@
 {
-   "version":"1.0.5",
-   "description":"Improved front proximity sensing, balancing, and refined tap detection.",
-   "released":"20 Apr 2026"
+   "version":"1.0.6",
+   "description":"Software update with bug fixes and path-shape motion improvements.",
+   "released":"06 May 2026"
 }
