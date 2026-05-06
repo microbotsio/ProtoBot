@@ -1,0 +1,5 @@
+Note:
+
+Use a 3mm LED and solder wires to its terminals, adding a series resistor if required.
+
+Connect the wires to the GND and 3V3 pins on the ProtoBot.
