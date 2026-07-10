@@ -6,6 +6,7 @@
   Important:
   - This code must be flashed on the JOYSTICK controller device not on ProtoBot
   - ProtoBot should be running its standard firmware
+  - Connect the analog joystick VDD pin to 3V3, NOT VO
 
   Overview:
   - Scans for a ProtoBot over BLE (by name or service UUID)
@@ -354,10 +355,11 @@ void loop() {
       uint8_t x = mapJoystick(rawX, JOYSTICK_X_CENTER);
       uint8_t y = mapJoystick(rawY, JOYSTICK_Y_CENTER);
 
-      if ((x > 80) && (x < 120)) {
+    //Create Deadzone
+      if ((x > 70) && (x < 130)) {
         x = 100;
       }
-      if ((y > 80) && (y < 120)) {
+      if ((y > 70) && (y < 130)) {
         y = 100;
       }
 
