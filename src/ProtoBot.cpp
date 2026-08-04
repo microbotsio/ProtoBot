@@ -1241,18 +1241,16 @@ void ProtoBot::RotateHandler(float rotate_angle, bool tare_on) {
       rYaw = _yaw;
     }
     if (shapeOnOFF) {
-      if ((!_manual_mode) || ((_manual_mode) && (shape_num = 2))) {
-        if (rotate_angle < 180) {
-          rotate_angle = 180 - rotate_angle;
-        } else {
-          rotate_angle = (360 - rotate_angle) + 180;
-        }
+      if (rotate_angle < 180) {
+        rotate_angle = 180 - rotate_angle;
+      } else {
+        rotate_angle = (360 - rotate_angle) + 180;
+      }
 
-        if (rotate_angle < 180) {
-          //skip
-        } else {
-          rYaw = rYaw + 180;
-        }
+      if (rotate_angle < 180) {
+        //skip
+      } else {
+        rYaw = rYaw + 180;
       }
     }
     _control_rotate = PID_Controller(rotate_angle, rYaw);
