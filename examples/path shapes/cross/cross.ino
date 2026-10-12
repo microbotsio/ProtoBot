@@ -22,6 +22,7 @@ int step = 0;         // Step counter for movement sequence
 void setup() {
   Serial.begin(115200);  // Start USB serial (for debugging/logs)
   myProtoBot.Init();     // Initialize robot (motors, sensors, etc)
+  myProtoBot.runWithoutBluetooth(); //Turn on robot without BLE connection
 }
 
 void loop() {
