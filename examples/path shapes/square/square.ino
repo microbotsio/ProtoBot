@@ -8,21 +8,19 @@
   - Shows how to control speed, size, and repetition
   - Includes an optional manual movement example
 
-  DriveSquare(speed-level, shape-size, loop)
-    speed-level : SPEED_FAST/SPEED_INTERMEDIATE/SPEED_SLOW
+  DriveSquare(shape-size, loop)
     shape-size  : 0–100  (larger value = larger square)
     loop        : SHAPE_ONCE = run once
                   SHAPE_LOOP = repeat continuously
 
   What this example does:
   - ProtoBot drives in a square once
-  - Speed level is set to slow
   - Shape size is set to 60
 
   Other built-in shapes you can try:
-    - myProtoBot.DriveCircle(SPEED_SLOW, 60, SHAPE_LOOP);     
-    - myProtoBot.DriveInfinity(SPEED_SLOW, 60, SHAPE_LOOP);   
-    - myProtoBot.DriveTriangle(SPEED_SLOW, 60, SHAPE_LOOP);   
+    - myProtoBot.DriveCircle(60, SHAPE_LOOP);     
+    - myProtoBot.DriveInfinity(60, SHAPE_LOOP);   
+    - myProtoBot.DriveTriangle(60, SHAPE_LOOP);   
 */
 
 #include <ProtoBot.h>
@@ -38,7 +36,7 @@ void setup() {
 void loop() {
   if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
 
-    myProtoBot.DriveSquare(SPEED_SLOW, 60, SHAPE_LOOP);  // Drive in a square shape with 60% size
+    myProtoBot.DriveSquare(60, SHAPE_LOOP);  // Drive in a square shape with 60% size
 
     // Uncomment below to control the robot step-by-step
     // step++;
