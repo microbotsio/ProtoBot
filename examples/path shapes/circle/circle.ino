@@ -5,10 +5,9 @@
   Overview:
   - Demonstrates how to make ProtoBot drive in a circle shape
   - Uses the built-in DriveCircle() function
-  - Shows how to control speed, size, and repetition
+  - Shows how to control size and repetition
 
-  DriveInfinity(speed-level, shape-size, loop)
-    speed-level : SPEED_FAST/SPEED_INTERMEDIATE/SPEED_SLOW
+  DriveCircle(shape-size, loop)
     shape-size  : 0–100  (larger value = larger square)
     loop        : SHAPE_ONCE = run once
                   SHAPE_LOOP = repeat continuously
@@ -26,6 +25,7 @@ ProtoBot myProtoBot;  // Create ProtoBot object
 void setup() {
   Serial.begin(115200);  // Start USB serial communication (for debugging)
   myProtoBot.Init();     // Initialize robot (motors, sensors, internal systems)
+  myProtoBot.runWithoutBluetooth(); //Turn on robot without BLE connection
 }
 
 void loop() {
