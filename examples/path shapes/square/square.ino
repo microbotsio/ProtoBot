@@ -5,7 +5,7 @@
   Overview:
   - Demonstrates how to make ProtoBot drive in a square shape
   - Uses the built-in DriveSquare() function
-  - Shows how to control speed, size, and repetition
+  - Shows how to control shape size and repetition
   - Includes an optional manual movement example
 
   DriveSquare(shape-size, loop)
