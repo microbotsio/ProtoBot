@@ -31,6 +31,7 @@ int step = 0;         // Used only for manual movement example
 void setup() {
   Serial.begin(115200);  // Start USB serial communication (for debugging)
   myProtoBot.Init();     // Initialize robot (motors, sensors, internal systems)
+  myProtoBot.runWithoutBluetooth(); //Turn on robot without BLE connection
 }
 
 void loop() {
