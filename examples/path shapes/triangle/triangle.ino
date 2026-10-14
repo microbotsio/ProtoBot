@@ -30,6 +30,6 @@ void setup() {
 
 void loop() {
   if (myProtoBot.Run(1)) {  // Run ProtoBot service loop at 1 Hz 
-    myProtoBot.DriveTriangle(70, SHAPE_LOOP);  // Drive in a circle shape with 70% shape size
+    myProtoBot.DriveTriangle(70, SHAPE_LOOP);  // Drive in a triangle shape with 70% shape size
   }
 }
