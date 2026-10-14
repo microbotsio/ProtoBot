@@ -18,9 +18,9 @@
   - Shape size is set to 60
 
   Other built-in shapes you can try:
-    - myProtoBot.DriveCircle(60, SHAPE_LOOP);     
-    - myProtoBot.DriveInfinity(60, SHAPE_LOOP);   
-    - myProtoBot.DriveTriangle(60, SHAPE_LOOP);   
+    - myProtoBot.DriveCircle();     
+    - myProtoBot.DriveInfinity();   
+    - myProtoBot.DriveTriangle();   
 */
 
 #include <ProtoBot.h>
