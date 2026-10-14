@@ -19,26 +19,22 @@
 
 #include <ProtoBot.h>
 
-ProtoBot myProtoBot;  // Create ProtoBot object
-int step = 0;
+ProtoBot myProtoBot;  
+bool shape_step = false;
 
 void setup() {
-  Serial.begin(115200);  // Start USB serial communication (for debugging)
-  myProtoBot.Init();     // Initialize robot (motors, sensors, internal systems)
-  myProtoBot.runWithoutBluetooth(); //Turn on robot without BLE connection
+  Serial.begin(115200);              // Start USB serial communication (for debugging)
+  myProtoBot.Init();                 // Initialize robot (motors, sensors, internal systems)
+  myProtoBot.runWithoutBluetooth();  //Turn on robot without BLE connection
 }
 
 void loop() {
   if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
-    step++;
-    switch (step) {
-      case 1:
-        myProtoBot.Drive(100, 90);  // Drive forward
-        break;
-      case 2:
-        myProtoBot.Rotate(150);  // 180 - 60deg = 120 internal -> 60deg turn
-        step = 0;
-        break;
+    shape_step = !shape_step;
+    if (shape_step) {
+      myProtoBot.Drive(100, 90);  // Drive forward
+    } else {
+      myProtoBot.Rotate(150);  // 180 - 60deg = 120 internal -> 60deg turn
     }
   }
 }
