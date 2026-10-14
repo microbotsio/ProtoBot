@@ -5,7 +5,7 @@
   Overview:
   - Demonstrates how to make ProtoBot drive in a figure-8 shape
   - Uses the built-in DriveInfinity() function
-  - Shows how to control  size and repetition
+  - Shows how to control size and repetition
 
   DriveInfinity(shape-size, loop)
     shape-size  : 0–100  (larger value = larger square)
@@ -30,6 +30,6 @@ void setup() {
 
 void loop() {
   if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
-    myProtoBot.DriveInfinity(100, SHAPE_LOOP);  // Drive in a square shape with 100% shape size
+    myProtoBot.DriveInfinity(100, SHAPE_LOOP);  // Drive in a figure-8 shape with 100% shape size
   }
 }
