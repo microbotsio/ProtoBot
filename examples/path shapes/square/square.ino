@@ -25,30 +25,26 @@
 
 #include <ProtoBot.h>
 
-ProtoBot myProtoBot;  // Create ProtoBot object
-int step = 0;         // Used only for manual movement example
+ProtoBot myProtoBot;      // Create ProtoBot object
+bool shape_step = false;  // Used only for manual movement example
 
 void setup() {
-  Serial.begin(115200);  // Start USB serial communication (for debugging)
-  myProtoBot.Init();     // Initialize robot (motors, sensors, internal systems)
-  myProtoBot.runWithoutBluetooth(); //Turn on robot without BLE connection
+  Serial.begin(115200);              // Start USB serial communication (for debugging)
+  myProtoBot.Init();                 // Initialize robot (motors, sensors, internal systems)
+  myProtoBot.runWithoutBluetooth();  //Turn on robot without BLE connection
 }
 
 void loop() {
-  if (myProtoBot.Run(3)) {  // Run ProtoBot service loop at 3 Hz (~every 333 ms)
+  if (myProtoBot.Run(1)) {  // Run ProtoBot service loop at 1 Hz
 
     myProtoBot.DriveSquare(60, SHAPE_LOOP);  // Drive in a square shape with 60% size
 
     // Uncomment below to control the robot step-by-step
-    // step++;
-    // switch (step) {
-    //   case 1:
-    //     myProtoBot.Drive(100, 90); // Drive forward at 100% speed
-    //     break;
-    //   case 2:
-    //     myProtoBot.Rotate(180); // Rotate 90 degrees
-    //     step = 0;  // Restart sequence
-    //     break;
+    // shape_step = !shape_step;
+    // if (shape_step) {
+    //   myProtoBot.Drive(100, 90);  // Drive forward at 100% speed
+    // } else {
+    //   myProtoBot.Rotate(180);  // Rotate 90 degrees
     // }
   }
 }
