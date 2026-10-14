@@ -1,9 +1,9 @@
 /*
-  Example: ProtoBot Cross/Plus Shape Driving Demo
+  Example: ProtoBot Cross Shape Driving Demo
   Board: ProtoBot (CodeCell C6 Drive inside)
 
   Overview:
-  - Demonstrates how to manually create a cross/plus shape using Drive() and Rotate() functions
+  - Demonstrates how to manually create a cross shape using Drive() and Rotate() functions
   - Shows how step-by-step motion sequences work
   - Repeats continuously to form a cross pattern
 
