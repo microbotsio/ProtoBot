@@ -28,7 +28,7 @@ void setup() {
 }
 
 void loop() {
-  if (myProtoBot.Run(3)) { // Run ProtoBot service loop at 2 Hz 
+  if (myProtoBot.Run(1)) { // Run ProtoBot service loop at 1 Hz 
     
     step++; // Move to next step in the sequence
     
