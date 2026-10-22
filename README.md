@@ -212,14 +212,17 @@ void DriveSquare(uint8_t shape_size, bool loop);
 void DriveCircle(uint8_t shape_size, bool loop);
 void DriveTriangle(uint8_t shape_size, bool loop);
 void DriveInfinity(uint8_t shape_size, bool loop);
+bool ReadDriveFlag();
 ```
 
 These functions demonstrate how forward motion combined with controlled rotation produces geometric paths.
 
 Parameters:
 
-- `shape_size` – range 1–100 to adjust the scale  
-- `loop` – repetition control (`SHAPE_ONCE` or `SHAPE_LOOP`)  
+- `shape_size` – range 1–100 to adjust the scale.
+- `loop` – repetition control (`SHAPE_ONCE` or `SHAPE_LOOP`).
+
+`ReadDriveFlag()` returns the current shape-driving flag: `true` when shape driving is active, or `false` when it is inactive. It reports shape-driving status rather than detecting whether the robot is physically moving.
 
 These functions are useful for understanding sequencing and motion control logic.
 
