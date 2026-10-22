@@ -193,17 +193,16 @@ void SetSpeed(uint8_t level);
 ## Path Shape Movement
 
 ```cpp
-void DriveSquare(uint8_t speed_level, uint8_t shape_size, bool loop);
-void DriveCircle(uint8_t speed_level, uint8_t shape_size, bool loop);
-void DriveTriangle(uint8_t speed_level, uint8_t shape_size, bool loop);
-void DriveInfinity(uint8_t speed_level, uint8_t shape_size, bool loop);
+void DriveSquare(uint8_t shape_size, bool loop);
+void DriveCircle(uint8_t shape_size, bool loop);
+void DriveTriangle(uint8_t shape_size, bool loop);
+void DriveInfinity(uint8_t shape_size, bool loop);
 ```
 
 These functions demonstrate how forward motion combined with controlled rotation produces geometric paths.
 
 Parameters:
 
-- `speed_level` – preset motor speed (e.g. `SPEED_FAST`, `SPEED_INTERMEDIATE`, `SPEED_SLOW`)  
 - `shape_size` – range 1–100 to adjust the scale  
 - `loop` – repetition control (`SHAPE_ONCE` or `SHAPE_LOOP`)  
 
