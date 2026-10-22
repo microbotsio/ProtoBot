@@ -1,0 +1,5 @@
+{
+   "version":"1.0.7",
+   "description":"Improved ProtoBot’s balancing and fine-tuned tap, light, and darkness triggers. Updated to the latest Bluetooth OTA firmware. Set shape driving to fast speed and fixed the charging status display when the battery is full.",
+   "released":"22 Oct 2026"
+}
