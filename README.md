@@ -163,12 +163,27 @@ The ProtoBot library exposes direct control functions for motors, sensors, and L
 void Init();
 bool Run(uint8_t loop_timer);
 void PrintLog(char *message);
+void runWithoutBluetooth();
+void runWhileCharging();
 ```
 
-- `Init()` initializes motors, sensors, and internal systems
-- `Run()` provides a timed execution structure
-- `PrintLog()` outputs sensor logging or debug information via the MicroLink App
+- `Init()` initializes motors, sensors, and internal systems.
+- `Run(loop_timer)` provides a timed execution structure.
+- `PrintLog(message)` outputs sensor logging or debug information via the MicroLink App.
+- `runWithoutBluetooth()` enables operation without requiring a Bluetooth connection.
+- `runWhileCharging()` enables operation while the battery is charging.
 
+Call the optional operating-mode functions once in `setup()` to enable the required behaviour:
+
+```cpp
+ProtoBot myProtoBot;
+
+void setup() {
+  myProtoBot.Init();
+  myProtoBot.runWithoutBluetooth();
+  myProtoBot.runWhileCharging();
+}
+```
 ---
 
 ## Motion Control
