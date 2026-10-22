@@ -1,5 +1,0 @@
-{
-   "version":"1.0.6",
-   "description":"Software update with bug fixes and path-shape motion improvements.",
-   "released":"06 May 2026"
-}
